@@ -1,0 +1,30 @@
+
+<div style="text-align:center">
+  <h1>
+    Puzzle Test
+  </h1>
+ </div>
+
+
+<button class="color" style="background-color: black;" mat-button (click)='onStart()'>Start game</button>
+
+<div class='container'>
+
+  <div *ngIf='win '>
+    Congratulations, you solved the puzzle in a total of {{count}} moves. You have a discount of 20% and the opportunity to fight the poverty in third world countries!
+  </div>
+
+  <div class="grid">
+    <div class="row" *ngFor='let i of [0,1,2]'>
+
+      <div class="col droppable" *ngFor='let j of [0,1,2]' id='{{i * 3 + j}}' >
+        <img class='image draggable ' src='assets/images/{{images[i * 3 + j].image}}' id='{{images[i * 3 + j].id}}' />
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="text">Total moves {{count}}</div>
+
+

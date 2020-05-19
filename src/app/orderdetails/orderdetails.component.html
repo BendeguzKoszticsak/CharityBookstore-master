@@ -1,0 +1,79 @@
+
+<div *ngIf="showContent">
+  <form #form="ngForm" (ngSubmit) = "submit(form)">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor = "let column of headers">
+              {{column}}
+            </th>
+          </tr>
+        </thead>
+        <tr *ngFor ="let book of booklist"  >
+          <td *ngFor = "let column of headers">
+      
+            {{book[column]}}
+          </td>  
+            
+        </tr>
+      </table>
+      <div class="form-group">
+          <label for="Name">Name</label>
+          <input required minlength="5" maxlength="30" pattern="[^()/<>[\]\\,'|\x22]+"  ngModel name="Name" #Name="ngModel" id="Name" type="text" class="form-control" placeholder="Hans Christian Andersen">
+      <div class="alert alert-danger" *ngIf="Name.touched && !Name.valid">
+          <div *ngIf="Name.errors.required">Name required</div>
+          <div *ngIf="Name.errors.minlength || Name.errors.maxlength || Name.errors.pattern ">Not valid Name</div>
+      </div>
+      </div>
+      <div class="form-group">
+          <label for="Email">Email Address</label>
+          <input required minlength="5" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  ngModel name="Email" #Email="ngModel" id="Email" type="text" class="form-control" placeholder="andersen@gmail.com">
+      <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+          <div *ngIf="Email.errors.required">Email required</div>
+          <div *ngIf="Email.errors.minlength || Email.errors.maxlength || Email.errors.pattern ">Not valid Email</div>
+      </div>
+      </div>
+      <div class="form-group">
+          <label for="Address">Address</label>
+          <input required minlength="5" maxlength="50"  ngModel name="Address" #Address="ngModel" id="Address" type="text" class="form-control" placeholder="H. Rasmussens vej 22">
+      <div class="alert alert-danger" *ngIf="Address.touched && !Address.valid">
+          <div *ngIf="Address.errors.required">Address required</div>
+          <div *ngIf="Address.errors.minlength || Address.errors.maxlength ">Not valid Address</div>
+      </div>
+      </div>
+
+
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="City">City</label>
+            <input required minlength="5" pattern="[^()/<>[\]\\,'|\x22]+" maxlength="50"  ngModel name="City" #City="ngModel" id="City" type="text" class="form-control" placeholder="Odense">
+            <div class="alert alert-danger" *ngIf="City.touched && !City.valid">
+              <div *ngIf="City.errors.required">City required</div>
+              <div *ngIf="City.errors.minlength || City.errors.maxlength || City.errors.pattern ">Not valid City</div>
+          </div>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select ngModel name="Regio"  #Regio="ngModel" class="form-control" id="Regio" >
+            <option *ngFor="let regio of Regions" >{{regio}}</option>
+            <div class="alert alert-danger" *ngIf="!Regio.valid"></div>
+            </select>
+            
+          </div>
+          <div class="form-group col-md-2">
+            <label for="Zip">Zip</label>
+            <input required minlength="4" maxlength="4"   ngModel name="Zip" #Zip="ngModel" id="Zip" type="text" class="form-control" placeholder="5000">
+            <div class="alert alert-danger" *ngIf="Zip.touched && !Zip.valid">
+              <div *ngIf="Zip.errors.required">Zip required</div>
+              <div *ngIf="Zip.errors.minlength || Zip.errors.maxlength  ">Not valid Zip</div>
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message to a child</label>
+          <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+      <button  type="submit"  class="btn btn-primary" [disabled]="!form.valid"  >Submit</button>
+  </form>
+</div>
