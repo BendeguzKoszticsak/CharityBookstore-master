@@ -23,7 +23,7 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.5.1",
     "jquery-ui": "^1.12.1",
     "popper.js": "^1.16.1",
