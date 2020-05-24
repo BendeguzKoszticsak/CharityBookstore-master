@@ -5,3 +5,27 @@
 <div *ngIf="cartProductList.length > 0">
     <button [routerLink]="['/shop/order',userID]" (click)="OrderList()" class="btn btn-primary btn-lg div">Next</button>
 </div>
+<footer class="text-center size">
+  <h3 class="text-center"></h3>
+  <p><span class="glyphicon glyphicon-map-marker"></span>Copenhagen, DK</p>
+  <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+  <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+</footer>
+<style>
+  .text-center {
+      font-size: large;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #3f51b5;
+      padding: 25px;
+    }
+    .size {
+      font-size: large;
+      color: white;
+    }
+    h3 {
+      font-size: large;
+      margin-top: 20px;
+    }
+</style>
