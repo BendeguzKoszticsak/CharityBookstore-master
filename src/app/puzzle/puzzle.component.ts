@@ -1,15 +1,21 @@
-import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit,Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'; 
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 import $ from 'jquery';
 import 'jquery-ui/ui/widgets/sortable.js';
 import 'jquery-ui/ui/widgets/draggable.js';
 import 'jquery-ui/ui/widgets/droppable.js';
+
 
 @Component({
   selector: 'app-puzzle',
   templateUrl: './puzzle.component.html',
   styleUrls: ['./puzzle.component.css']
 })
+@Injectable()
 export class PuzzleComponent implements OnInit, AfterViewInit {
+  Message = "Parent to Child"
 
   images: any[] = [{id: 0, image: 'isentia-1.jpg'},
                   {id: 1, image: 'isentia-2.jpg'},
@@ -23,23 +29,37 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
   ];
 
   count = 0;
+  result: Observable<any[]>;
+  yourumber : any[];
+  number = Math.floor(Math.random() * 350) + 1;
   state = [];
   win = false;
 
-  constructor() { }
 
-  ngOnInit() {
-
-    this.onStart();
+  constructor(private route: ActivatedRoute, cupon: AngularFireDatabase) { 
+    this.result = cupon.list('/Games').valueChanges();
+    this.result.subscribe(val => {this.yourumber = val[val.length - 1]['__id']
+    });
   }
 
-  onStart() {
+  ngOnInit() {
+    this.onStart();
+    
+  
 
+  }
+
+  gameResult() {
+ }
+
+  onStart() {
     this.images.sort(function() { return 0.5 - Math.random(); });
     this.state = [];
     this.win = false;
     this.images.forEach((x) => { this.state.push(x.id); });
+    
   }
+ 
 
   ngAfterViewInit() {
 
@@ -74,6 +94,7 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
       drag: function(e) {
       },
       stop: function(e) {
+        
       }
     });
   }

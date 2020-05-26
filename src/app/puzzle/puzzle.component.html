@@ -10,8 +10,8 @@
 
 <div class='container'>
 
-  <div *ngIf='win '>
-    Congratulations, you solved the puzzle in a total of {{count}} moves. You have a discount of 20% and the opportunity to fight the poverty in third world countries!
+  <div *ngIf='win' ng-controller='gameResult'>
+    Congratulations, you solved the puzzle in a total of {{count}} moves. You have a discount of 20% and the opportunity to fight the poverty in third world countries! Your cupon is {{yourumber}}
   </div>
 
   <div class="grid">

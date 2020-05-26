@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,8 @@ import { PuzzleComponent } from './puzzle/puzzle.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { CongratsComponent } from './congrats/congrats.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { initializeApp } from 'firebase';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -42,13 +47,24 @@ import { NotfoundComponent } from './notfound/notfound.component';
   ],
   imports: [FormsModule,HttpClientModule, ReactiveFormsModule,HttpModule,
     BrowserModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCNNyNhtF_3JAzYHbDSIpCtPMbfZmSL87s",
+      authDomain: "bookstore-2594a.firebaseapp.com",
+      databaseURL: "https://bookstore-2594a.firebaseio.com",
+      projectId: "bookstore-2594a",
+      storageBucket: "bookstore-2594a.appspot.com",
+      messagingSenderId: "108650393473",
+      appId: "1:108650393473:web:68c413bc8a5c6144934280",
+      measurementId: "G-TWWZQP4PYD"
+    }),
+    AngularFireDatabaseModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

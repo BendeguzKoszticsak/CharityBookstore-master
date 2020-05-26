@@ -18,6 +18,16 @@
         </tr>
       </table>
       <div class="form-group">
+        <label for="Puzzle">Puzzle Cupon</label>
+        <input minlength="25" maxlength="25" pattern="[^()/<>[\]\\,'|\x22]+"  ngModel name="Puzzle" #Puzzle="ngModel" id="Puzzle" (change)="checkPuzzle(Puzzle.value)" type="text" class="form-control" placeholder="5ec799e722f8777dd15cfd4">
+
+      </div>
+      <div class="form-group">
+        <label for="DragandDrop">Quiz Cupon</label>
+        <input minlength="25" maxlength="25" pattern="[^()/<>[\]\\,'|\x22]+"  ngModel name="DragandDrop" #DragandDrop="ngModel" id="DragandDrop" (change)="checkDragDrop(DragandDrop.value)" type="text" class="form-control" placeholder="5ec7988722f8897dd15cfd4">
+
+      </div>
+      <div class="form-group">
           <label for="Name">Name</label>
           <input required minlength="5" maxlength="30" pattern="[^()/<>[\]\\,'|\x22]+"  ngModel name="Name" #Name="ngModel" id="Name" type="text" class="form-control" placeholder="Hans Christian Andersen">
       <div class="alert alert-danger" *ngIf="Name.touched && !Name.valid">
