@@ -1,29 +1,76 @@
-
-<div class="quiz-wrapper">
-	<p class="question-description">Fill in the blanks by dragging the missing answer.</p>
-	<ul class="options">
-		<li class="title">Options</li>
-		<li class="option" data-target="carraway">Nick Carraway</li>
-		<li class="option" data-target="fitz">F. Scott Fitzgerald</li>
-		<li class="option" data-target="westegg">West Egg</li>
-		<li class="option" data-target="buchanan">Tom Buchanan</li>
-		<li class="option" data-target="daisy">Daisy</li>
-		<li class="option" data-target="ashes">Valley of Ashes</li>
-	</ul>
-<div class="answers">
-	<ol>
-		<li><span class="target" data-accept="fitz">&nbsp;</span>, a native of St Paul, Minnesota, and also a member of the "Lost Generation" finished four novels including "This Side of Paradise".</li>
-		<li><span class="target" data-accept="carraway">&nbsp;</span> attended Yale with the large and brooding<span class="target" data-accept="buchanan">&nbsp;</span>.</li>
-		<li>George Wilson owns an unsuccessful garage in an area known as the <span class="target" data-accept="ashes">&nbsp;</span>, where Tom brings Nick for a party.</li>
-		<li>Jay Gatsby, the Buchanans, and Nick himself all make<span class="target" data-accept="westegg">&nbsp;</span>their home.</li>
-	</ol>
-</div>
- <button type="submit" value="submit">Submit</button>
- <div class="lightbox-bg"></div>
- <div class="status confirm">
-   <p>All Answers Answered</p>
- </div>
- <div class="status deny">
-   <p>Answers Remain</p>
- </div>
-</div>
+<body>
+	
+	<section class="app">
+		 <div class="app-title"><img src="https://cdn.pixabay.com/photo/2019/02/19/19/45/thumbs-up-4007573_960_720.png" class="app-title-img" alt="" draggable="false"><div class="app-title-text">Drag the correct answers into <br> their correct boxes</div><img src="https://cdn.pixabay.com/photo/2019/02/19/19/45/thumbs-up-4007573_960_720.png" class="app-title-img2" alt="" draggable="false"></div>
+		<div class="app-flexbox">
+			<div class="question-cont">
+				 <div class="question-cont-section1">
+					 <div class="question-wrapper">
+					 <div class="question" id="question1"></div>
+					 <div class="input-box" id="input-box1"></div>
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt=""class="tick left">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross left">
+				 </div>
+				 <div class="question-wrapper">
+					 <div class="question" id="question2"></div>
+					 <div class="input-box" id="input-box2"></div>
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt=""class="tick left">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt=""class="cross left">
+				 </div>
+				 <div class="question-wrapper">
+					 <div class="question" id="question3"></div>
+					 <div class="input-box" id="input-box3"></div>
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick left">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross left">
+				 </div>
+				 </div>
+				 
+				 <div class="question-cont-section2">
+					 <div class="question-wrapper">
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
+					 <div class="input-box" id="input-box4"></div>
+					 <div class="question" id="question4"></div>
+				 </div>
+				 <div class="question-wrapper">
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
+					 <div class="input-box" id="input-box5"></div>
+					 <div class="question" id="question5"></div>
+				 </div>
+				 <div class="question-wrapper">
+					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
+					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
+					 <div class="input-box" id="input-box6"></div>
+					 <div class="question" id="question6"></div>
+				 </div>
+				 </div>
+			 </div>
+			 <div class="answer-cont">
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer1" draggable="false"></div>
+				 </div>
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer2" draggable="false"></div>
+				 </div>
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer3" draggable="false"></div>
+				 </div>
+				 
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer4" draggable="false"></div>
+				 </div>
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer5" draggable="false"></div>
+				 </div>
+				 <div class="answer-wrapper">
+					 <div class="answer" id="answer6" draggable="false"></div>
+				 </div>
+			 </div>
+		 </div>
+		 <div class="controls-cont">
+			 <div class="redo">Practise Again</div>
+			 <div class="submit">Submit</div>
+		 </div>
+	 </section>
+ </body> 

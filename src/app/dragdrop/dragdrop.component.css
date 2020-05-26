@@ -1,83 +1,188 @@
-.quiz-wrapper {
-    position: relative;
-    display: block;
-    width: 510px;
-    height: 450px;
-  }
-  .quiz-wrapper p.question-description {
-    background: #19286c;
-    color: white;
-    padding: 25px 20px;
-  }
-  .quiz-wrapper ul.options {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 165px;
-    list-style: none;
-    border: 1px solid #19286c;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  .quiz-wrapper ul.options li {
-    border: 1px solid transparent;
-    padding: 6px 8px;
-  }
-  .quiz-wrapper ul.options li.title {
-    background: #19286c;
-    color: white;
-  }
-  .quiz-wrapper ul.options li.option {
-    display: block;
-    position: relative;
-    z-index: 50;
-    font-size: 13px;
-  }
-  .quiz-wrapper .answers {
-    display: inline-block;
-    width: 335px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  .quiz-wrapper .answers .target {
-    display: inline-block;
-    width: 110px;
-    background: lightblue;
-    margin: 0 3px;
-    text-align: center;
-  }
-  .quiz-wrapper button[type="submit"] {
-    display: block;
-    position: relative;
-    margin: 10px auto;
-    padding: 10px;
-    background: #19286c;
-    border: none;
-    color: white;
-    font-size: 16px;
-  }
-  .lightbox-bg {
-    display: none;
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  .status {
-    display: none;
-    position: absolute;
-    z-index: 110;
-    text-align: center;
-    width: 80%;
-    top: 220px;
-    left: 47px;
-  }
-  .status p {
-    background: white;
-    padding: 30px;
-  }
-  
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*::selection {
+	color: none;
+	background: none;
+}
+
+body {
+	margin: 0;
+	padding-top: 4vw;
+	padding-bottom: 4vw;
+	overflow-x: hidden;
+}
+
+.app-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font: normal 4vw sans-serif;
+	width: 100vw;
+	text-align: center;
+}
+
+.app-title-img {
+	background-size: 100%;
+	width: 16vw;
+	height: 12vw;
+	margin-right: 2vw;
+}
+
+.app-title-img2 {
+	background-size: 100%;
+	width: 16vw;
+	height: 12vw;
+	margin-left: 2vw;
+}
+
+.app {
+	width: 100vw;
+	text-align: center;
+}
+
+.app-flexbox {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	justify-content: center;
+	margin-top: 5vw;
+	padding: 0vw 4vw 4vw 4vw;
+}
+
+.question-cont {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
+}
+
+.question-wrapper {
+	display: flex;
+	align-items: center;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+}
+
+.question {
+	font: normal 3vw sans-serif;
+	position: relative;
+}
+
+.input-box {
+	background: transparent;
+	width: 8vw;
+	height: 8vw;
+	border: 1px solid #383838;
+	border-radius: 50%;
+	margin-left: 2vw;
+}
+
+#input-box4,
+#input-box5,
+#input-box6 {
+	margin-right: 2vw;
+}
+
+.answer-wrapper {
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	z-index: 9;
+}
+
+.answer-wrapper:nth-child(1) {
+	top: 20vw;
+	left: 38vw;
+}
+
+.answer-wrapper:nth-child(2) {
+	top: 20vw;
+	left: 52vw;
+}
+
+.answer-wrapper:nth-child(3) {
+	top: 30.5vw;
+	left: 38vw;
+}
+
+.answer-wrapper:nth-child(4) {
+	top: 30.5vw;
+	left: 52vw;
+}
+
+.answer-wrapper:nth-child(5) {
+	top: 40.5vw;
+	left: 38vw;
+}
+
+.answer-wrapper:nth-child(6) {
+	top: 40.5vw;
+	left: 52vw;
+}
+
+.answer {
+	background: dodgerblue;
+	font: normal 3vw sans-serif;
+	line-height: 8vw;
+	width: 8vw;
+	height: 8vw;
+	border: 1px solid #383838;
+	border-radius: 50%;
+	color: white;
+	cursor: move;
+	z-index: 10;
+}
+
+.tick,
+.cross{
+	display: none;
+	width: 8vw;
+	height: auto;
+}
+
+.left {
+	position: absolute;
+	left: 25vw;
+}
+
+.tick-right, 
+.cross-right {
+	position: absolute;
+	left: 67vw;
+}
+
+.controls-cont {
+	padding-left: 4vw;
+	padding-bottom: 4vw;
+}
+
+.redo,
+.submit{
+	position: relative;
+	top: 5vw;
+	font: normal 3vw sans-serif;
+	cursor: pointer;
+	float: left;
+}
+
+.redo {
+	display: none;
+	background: red;
+	color: white;
+	padding: 2vw 4vw;
+	clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%, 0% 100%);
+	border-radius: 0.4vw;
+}
+
+.submit {
+	display: inline-block;
+	background: orange;
+	color: white;
+	padding: 2vw 4vw;
+	clip-path: polygon(10% 100%, 0% 0%, 100% 0%, 90% 100%, 10% 100%);
+	border-radius: 0.4vw;
+}
