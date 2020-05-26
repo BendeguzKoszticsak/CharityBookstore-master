@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-import * as $ from 'jquery';
-import 'jqueryui';
+import $ from 'jquery';
 import 'jquery-ui/ui/widgets/sortable.js';
 import 'jquery-ui/ui/widgets/draggable.js';
 import 'jquery-ui/ui/widgets/droppable.js';
