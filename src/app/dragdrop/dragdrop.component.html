@@ -1,76 +1,85 @@
-<body>
-	
-	<section class="app">
-		 <div class="app-title"><img src="https://cdn.pixabay.com/photo/2019/02/19/19/45/thumbs-up-4007573_960_720.png" class="app-title-img" alt="" draggable="false"><div class="app-title-text">Drag the correct answers into <br> their correct boxes</div><img src="https://cdn.pixabay.com/photo/2019/02/19/19/45/thumbs-up-4007573_960_720.png" class="app-title-img2" alt="" draggable="false"></div>
-		<div class="app-flexbox">
-			<div class="question-cont">
-				 <div class="question-cont-section1">
-					 <div class="question-wrapper">
-					 <div class="question" id="question1"></div>
-					 <div class="input-box" id="input-box1"></div>
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt=""class="tick left">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross left">
-				 </div>
-				 <div class="question-wrapper">
-					 <div class="question" id="question2"></div>
-					 <div class="input-box" id="input-box2"></div>
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt=""class="tick left">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt=""class="cross left">
-				 </div>
-				 <div class="question-wrapper">
-					 <div class="question" id="question3"></div>
-					 <div class="input-box" id="input-box3"></div>
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick left">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross left">
-				 </div>
-				 </div>
-				 
-				 <div class="question-cont-section2">
-					 <div class="question-wrapper">
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
-					 <div class="input-box" id="input-box4"></div>
-					 <div class="question" id="question4"></div>
-				 </div>
-				 <div class="question-wrapper">
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
-					 <div class="input-box" id="input-box5"></div>
-					 <div class="question" id="question5"></div>
-				 </div>
-				 <div class="question-wrapper">
-					 <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_960_720.png" alt="" class="tick tick-right">
-					 <img src="https://cdn.pixabay.com/photo/2013/07/12/12/40/abort-146096_960_720.png" alt="" class="cross cross-right">
-					 <div class="input-box" id="input-box6"></div>
-					 <div class="question" id="question6"></div>
-				 </div>
-				 </div>
-			 </div>
-			 <div class="answer-cont">
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer1" draggable="false"></div>
-				 </div>
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer2" draggable="false"></div>
-				 </div>
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer3" draggable="false"></div>
-				 </div>
-				 
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer4" draggable="false"></div>
-				 </div>
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer5" draggable="false"></div>
-				 </div>
-				 <div class="answer-wrapper">
-					 <div class="answer" id="answer6" draggable="false"></div>
-				 </div>
-			 </div>
-		 </div>
-		 <div class="controls-cont">
-			 <div class="redo">Practise Again</div>
-			 <div class="submit">Submit</div>
-		 </div>
-	 </section>
- </body> 
+<div class="row">
+
+    <div class="col-sm-3">
+        <div class="card card-outline-success mb-3">
+            <div class="card-header card-inverse card-success">
+                Draggable Items
+                </div>
+            <div class="card-block scroll-list">
+                <div class="list-group">
+                    <li class="list-group-item list-group-item-action list-group-item-success" [draggable] *ngFor="let item for vegetables"
+                        [dragClass]="'active'" [dragTransitClass]="'active'" [dragData]="item" [dragScope]="item.type" [dragEnabled]="dragEnabled">
+                        {{item.name}}
+                    </li>
+                </div>
+            </div>
+
+            <div class="card-footer">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="" title="Drag Enabled" [(ngModel)]="dragEnabled">
+                  Drag Enabled
+                </label>
+              </div>
+            </div>
+        </div>
+
+        <div class="card card-outline-primary mb-3">
+            <div class="card-header card-inverse card-primary">Draggable Items with Handle</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group text-center">
+                    <li draggable *ngFor="let item of fruits" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item justify-content-between list-group-item-action"
+                        [dragScope]="item.type" [dragHandle]="'.drag-bar'">
+                        {{item.name}}
+                        <i #dragHandle class="drag-bar fa fa-bars fa-lg" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border'" [dropScope]="'fruit'" [dragHintClass]="'drag-hint'"
+            (onDrop)="onFruitDrop($event)" [dropEnabled]="fruitDropEnabled">
+            <div class="card-header card-inverse card-primary">
+                Drop Fruits here
+            </div>
+            <div class="card-block scroll-list">
+                <li *ngFor="let item of droppedFruits" class="list-group-item">{{item.name}}</li>
+            </div>
+
+              <div class="card-footer">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value=""  [(ngModel)]="fruitDropEnabled">
+                  Drop Enabled
+                </label>
+              </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="col-sm-3">
+        <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border-green'" [dropScope]="'vegetable'"
+            [dragHintClass]="'drag-hint'" (onDrop)="onVegetableDrop($event)">
+            <div class="card-header card-inverse card-primary">Drop Vegetables here</div>
+            <div class="card-block scroll-list">
+                <li *ngFor="let item of droppedVegetables" class="list-group-item">{{item.name}}</li>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable']"
+            [dragHintClass]="'drag-hint'" (onDrop)="onAnyDrop($event)">
+            <div class="card-header card-inverse card-primary">Drop Anything here</div>
+            <div class="card-block scroll-list">
+                <li *ngFor="let item of droppedItems" class="list-group-item">{{item.name}}</li>
+            </div>
+        </div>
+    </div>
+
+</div>
