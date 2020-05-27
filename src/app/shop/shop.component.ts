@@ -13,7 +13,7 @@ export class ShoppingcartComponent  {
   userID = Math.floor(Math.random() * 100000000) + 1;
 
   constructor(private http:Http) { 
-    this.http.get('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/books')
+    this.http.get('http://ec2-3-86-28-129.compute-1.amazonaws.com:3000/books')
       .subscribe(response=>{
         this.productList = response.json();
       });
@@ -40,7 +40,7 @@ export class ShoppingcartComponent  {
     var i =0;
     for (;this.cartProductList[i];){
       let post = { Bookid : this.cartProductList[i].id, Amount : this.cartProductList[i].num, Price: this.cartProductList[i].num * this.cartProductList[i].Price, UserId:this.userID}
-      this.http.post('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/order',post)
+      this.http.post('http://ec2-3-86-28-129.compute-1.amazonaws.com:3000/order',post)
         .subscribe(response => {
         })
       i++;

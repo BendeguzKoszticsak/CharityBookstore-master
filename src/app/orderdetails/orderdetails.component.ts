@@ -73,7 +73,7 @@ export class OrderdetailsComponent implements OnInit  {
   }
   getOrder(id){
   var i=0;
-  this.http.get('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/order/'+ id)
+  this.http.get('http://ec2-3-86-28-129.compute-1.amazonaws.com:3000/order/'+ id)
       .subscribe(response=>{
         this.orderList = response.json();
         if (response['_body'].length === 2){
@@ -91,7 +91,7 @@ export class OrderdetailsComponent implements OnInit  {
   
   getBook(id, i, Amount, Price){
     
-    this.http.get('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/books/'+ id)
+    this.http.get('http://ec2-3-86-28-129.compute-1.amazonaws.com:3000/books/'+ id)
       .subscribe(response=>{
           this.bookList[i]=response.json();
           this.bookList[i][0]['FullPrice'] = Price;
@@ -107,7 +107,7 @@ export class OrderdetailsComponent implements OnInit  {
   submit(form){
     let post = { id : this.id, Address : form.value.Address, City: form.value.City, Email : form.value.Email, Name : form.value.Name, Regio : form.value.Regio, Zip : form.value.Zip}
     //window.open('mailto:koszticsakbendeguz@gmail.com?subject=subject&body=body');
-    this.http.post('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/user',post)
+    this.http.post('http://ec2-3-86-28-129.compute-1.amazonaws.com:3000/user',post)
       .subscribe(response => {
         this.Congrats()
         })

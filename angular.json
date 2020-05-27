@@ -64,7 +64,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CharityBookstore:build"
+            "browserTarget": "CharityBookstore:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

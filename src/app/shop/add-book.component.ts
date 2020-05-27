@@ -18,7 +18,7 @@ export class AddTutorialComponent  {
   productList: any[];
 
   constructor(http:Http) { 
-    http.get('http://ec2-52-91-100-197.compute-1.amazonaws.com:3000/books')
+    http.get('ec2-3-86-28-129.compute-1.amazonaws.com:3000/books')
       .subscribe(response=>{
         this.productList = response.json();
       });
