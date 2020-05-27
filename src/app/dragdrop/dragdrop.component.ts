@@ -15,16 +15,16 @@ export class DragdropComponent implements OnInit {
   }
 
   vegetables = [
-    {name: 'Carrot', type: 'vegetable'},
-    {name: 'Onion', type: 'vegetable'},
-    {name: 'Potato', type: 'vegetable'},
-    {name: 'Capsicum', type: 'vegetable'}];
+    {name: 'Poverty only affects people in 3rd world countries', type: 'vegetable'},
+    {name: 'Conflict and War has nothing to do with poverty', type: 'vegetable'},
+    {name: 'You can be born in poverty but you cannot end up living in poverty', type: 'vegetable'},
+    {name: 'Denmark is a part of the countries with the highest poverty rate', type: 'vegetable'}];
 
   fruits = [
-    {name: 'Apple', type: 'fruit'},
-    {name: 'Orange', type: 'fruit'},
-    {name: 'Mango', type: 'fruit'},
-    {name: 'Banana', type: 'fruit'}];
+    {name: 'Inequality and Marginalisation are a cause of poverty', type: 'fruit'},
+    {name: 'Poor education can lead to generational poverty', type: 'fruit'},
+    {name: 'Poverty refers to individuals who live on less than 1.25$ a day', type: 'fruit'},
+    {name: 'Generational poverty cannot be attributed to one individual in particular', type: 'fruit'}];
 
   droppedFruits = [];
   droppedVegetables = [];
