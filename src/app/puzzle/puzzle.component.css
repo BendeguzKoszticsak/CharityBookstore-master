@@ -23,3 +23,19 @@
 .color {
   color: white;
 }
+
+.text-center {
+  font-size: large;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+.size {
+  font-size: x-large;
+}
+h3 {
+  font-size: x-large;
+  margin-top: 20px;
+}
