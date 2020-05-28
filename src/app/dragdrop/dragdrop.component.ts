@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DropEvent } from 'ng-drag-drop';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -7,9 +9,14 @@ import { DropEvent } from 'ng-drag-drop';
   templateUrl: './dragdrop.component.html',
   styleUrls: ['./dragdrop.component.css']
 })
-export class DragdropComponent implements OnInit {
-
-  constructor() { 
+export class DragdropComponent  {
+  yourumber : any[];
+  result: Observable<any[]>;
+  Counter = 0;
+  constructor(cupon: AngularFireDatabase) { 
+    this.result = cupon.list('/Drag&Drop').valueChanges();
+    this.result.subscribe(val => {this.yourumber = val[val.length - 1]['__id']
+    });
   
     
   }
@@ -35,11 +42,13 @@ export class DragdropComponent implements OnInit {
   onFruitDrop(e: DropEvent) {
     this.droppedFruits.push(e.dragData);
     this.removeItem(e.dragData, this.fruits);
+    this.Counter += 1;
   }
 
   onVegetableDrop(e: DropEvent) {
     this.droppedVegetables.push(e.dragData);
     this.removeItem(e.dragData, this.vegetables);
+    this.Counter += 1;
   }
 
   onAnyDrop(e: DropEvent) {
@@ -59,9 +68,8 @@ export class DragdropComponent implements OnInit {
     list.splice(index, 1);
   }
 
-  ngOnInit(): void {
-  }
+}
 
 
   
-}
+

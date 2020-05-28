@@ -51,7 +51,7 @@ export class OrderdetailsComponent implements OnInit  {
   checkDragDrop(input){
     var arrayLength = this.listDrag.length;
     for (var i = 0; i < arrayLength; i++) {
-    if(this.listDrag[i]['__id'].valueOf() == input.valueOf()) {
+    if(this.listDrag[i]['__id'] == input) {
       var arrayLength2 = this.booklist.length;
       for (var k = 0; k < arrayLength2; k++) {
         var discount = this.booklist[k]['Price'] *0.20
