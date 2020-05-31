@@ -1,9 +1,12 @@
 
-<h1>Please choose a book and help a kid.</h1>
+
 <product-list (productAdded)="addProductToCart($event)" [products]="productList"></product-list>
 <shopping-cart [products]="cartProductList" (productRemoved)="removeProduct($event)"></shopping-cart>
 <div *ngIf="cartProductList.length > 0">
-    <button [routerLink]="['/shop/order',userID]" (click)="OrderList()" class="btn btn-primary btn-lg div">Next</button>
+    <button [routerLink]="['/shop/order',userID]" (click)="OrderList()" class="btn" mat-button>Next</button>
+    <br>
+    <br>
+    <br>
 </div>
 <footer class="text-center size">
   <h3 class="text-center"></h3>
@@ -28,4 +31,10 @@
       font-size: large;
       margin-top: 20px;
     }
+    .btn {
+      margin-top: 45px;
+      background-color: #3f51b5;
+      color: white;
+      left: 1200px;
+}
 </style>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, AfterViewInit,Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; 
+import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import $ from 'jquery';
@@ -17,15 +17,15 @@ import 'jquery-ui/ui/widgets/droppable.js';
 export class PuzzleComponent implements OnInit, AfterViewInit {
   Message = "Parent to Child"
 
-  images: any[] = [{id: 0, image: 'isentia-1.jpg'},
-                  {id: 1, image: 'isentia-2.jpg'},
-                  {id: 2, image: 'isentia-3.jpg'},
-                  {id: 3, image: 'isentia-4.jpg'},
-                  {id: 4, image: 'isentia-5.jpg'},
-                  {id: 5, image: 'isentia-6.jpg'},
-                  {id: 6, image: 'isentia-7.jpg'},
-                  {id: 7, image: 'isentia-8.jpg'},
-                  {id: 8, image: 'isentia-9.jpg'}
+  images: any[] = [{id: 0, image: '1.jpg'},
+                  {id: 1, image: '2.jpg'},
+                  {id: 2, image: '3.jpg'},
+                  {id: 3, image: '4.jpg'},
+                  {id: 4, image: '5.jpg'},
+                  {id: 5, image: '6.jpg'},
+                  {id: 6, image: '7.jpg'},
+                  {id: 7, image: '8.jpg'},
+                  {id: 8, image: '9.jpg'}
   ];
 
   count = 0;
@@ -36,7 +36,7 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
   win = false;
 
 
-  constructor(private route: ActivatedRoute, cupon: AngularFireDatabase) { 
+  constructor(private route: ActivatedRoute, cupon: AngularFireDatabase) {
     this.result = cupon.list('/Games').valueChanges();
     this.result.subscribe(val => {this.yourumber = val[val.length - 1]['__id']
     });
@@ -44,8 +44,8 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.onStart();
-    
-  
+
+
 
   }
 
@@ -57,9 +57,9 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
     this.state = [];
     this.win = false;
     this.images.forEach((x) => { this.state.push(x.id); });
-    
+
   }
- 
+
 
   ngAfterViewInit() {
 
@@ -94,7 +94,7 @@ export class PuzzleComponent implements OnInit, AfterViewInit {
       drag: function(e) {
       },
       stop: function(e) {
-        
+
       }
     });
   }
