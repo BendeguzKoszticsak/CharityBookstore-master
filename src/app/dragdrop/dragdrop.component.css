@@ -8,7 +8,7 @@
       border: #ff525b dashed 2px;
     }
 
-    
+
 
     .drag-target-border {
       border: #00ff00 dashed 2px;
@@ -17,4 +17,17 @@
     .drag-target-border-green {
       border: #d10000 dashed 2px;
     }
-  
+
+    footer {
+      background-color: #3f51b5;
+      padding: 25px;
+      position:absolute;
+
+
+
+    }
+
+    .size {
+      font-size: large;
+      color: white;
+    }

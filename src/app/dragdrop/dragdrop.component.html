@@ -1,9 +1,14 @@
-<h3> Quiz</h3>
+<div class="container text-center">
+<h3> <strong>Quiz</strong></h3>
+
 <p>Drag the questions into the correct answer categories</p>
 <hr>
 <div *ngIf = "Counter === 8">
     Your cupon is {{yourumber}}
 </div>
+<br>
+<br>
+<div class="container text-center">
 <div class="row">
     <div class="col-sm-3">
         <div class="card card-outline-success mb-3">
@@ -20,19 +25,19 @@
                         [dragClass]="'active'" [dragTransitClass]="'active'" [dragData]="item" [dragScope]="item.type" [dragEnabled]="dragEnabled">
                         {{item.name}}
 					</li>
-					
+
                 </div>
             </div>
 
             <div class="card-footer">
               <div class="form-check">
-                
+
               </div>
             </div>
         </div>
 
         <div class="card card-outline-primary mb-3">
-            
+
         </div>
     </div>
 
@@ -48,7 +53,7 @@
 
               <div class="card-footer">
               <div class="form-check">
-                
+
               </div>
             </div>
 
@@ -64,7 +69,14 @@
             <div class="card-block scroll-list">
                 <li *ngFor="let item of droppedVegetables" class="list-group-item">{{item.name}}</li>
             </div>
+            <div class="card-footer">
+              <div class="form-check">
+
+              </div>
+            </div>
         </div>
+
+
     </div>
 
     <!--<div class="col-sm-3">
@@ -79,3 +91,7 @@
 -->
 
 </div>
+
+</div>
+
+
